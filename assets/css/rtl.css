@@ -1,0 +1,144 @@
+:root[dir="rtl"] body {
+  direction: rtl;
+}
+
+/* Right align key section texts for Persian */
+:root[dir="rtl"] #about .section-title .title,
+:root[dir="rtl"] #about .section-title .subtitle,
+:root[dir="rtl"] #service .section-title .title,
+:root[dir="rtl"] #service .section-title .subtitle,
+:root[dir="rtl"] #skill .section-title .title,
+:root[dir="rtl"] #resume .section-title .title,
+:root[dir="rtl"] #portfolio .section-title .title,
+:root[dir="rtl"] #portfolio .section-title .subtitle,
+:root[dir="rtl"] #contact .section-title .title,
+:root[dir="rtl"] #contact .section-title .subtitle {
+  text-align: right;
+}
+
+/* About info and sidebar labels */
+:root[dir="rtl"] #about .section-content li,
+:root[dir="rtl"] .user-meta-info ul li {
+  text-align: right;
+}
+
+/* Keep skills slider ordered visually, let JS handle nav */
+:root[dir="rtl"] .skills-slider .swiper {
+  direction: ltr;
+}
+
+/* Fix skills navigation positioning in RTL */
+:root[dir="rtl"] .skills-slider-navigation {
+  right: auto;
+  left: 8px;
+}
+
+/* Swap button positions in Persian - next button goes left, prev button goes right */
+:root[dir="rtl"] .skills-slider-navigation .button-next {
+  order: 1;
+}
+
+:root[dir="rtl"] .skills-slider-navigation .counter {
+  order: 2;
+}
+
+:root[dir="rtl"] .skills-slider-navigation .button-prev {
+  order: 3;
+}
+
+/* Portfolio project descriptions */
+:root[dir="rtl"] .portfolio_wrapper .info p {
+  text-align: right;
+}
+
+/* Services section - fix icon and number overlap in Persian */
+:root[dir="rtl"] .service-card-wrapper .icon {
+  left: 6px;
+  right: auto;
+}
+
+:root[dir="rtl"] .service-card-wrapper .number {
+  position: relative;
+  z-index: 1;
+}
+
+/* Resume section improvements for Persian */
+:root[dir="rtl"] .resume-section .experience li {
+  text-align: right;
+}
+
+:root[dir="rtl"] .resume-section .experience li h6 {
+  text-align: right;
+}
+
+:root[dir="rtl"] .resume-section .experience li h4 {
+  text-align: right;
+}
+
+:root[dir="rtl"] .resume-section .experience li p {
+  text-align: right;
+}
+
+/* Education and Achievements section - fix RTL layout */
+:root[dir="rtl"] #resume .experience ul {
+  direction: rtl;
+}
+
+:root[dir="rtl"] #resume .experience ul::before {
+  left: auto !important;
+  right: 16rem !important;
+}
+
+:root[dir="rtl"] #resume .experience li {
+  direction: rtl;
+  text-align: right;
+}
+
+:root[dir="rtl"] #resume .experience li > div:first-child {
+  text-align: right;
+}
+
+:root[dir="rtl"] #resume .experience li > div:last-child {
+  padding-left: 0 !important;
+  padding-right: 4rem !important;
+}
+
+:root[dir="rtl"] #resume .experience li > div:last-child::before {
+  left: auto !important;
+  right: -0.25rem !important;
+}
+
+:root[dir="rtl"] #resume .experience li h4 {
+  text-align: right;
+  direction: rtl;
+}
+
+:root[dir="rtl"] #resume .experience li h6 {
+  text-align: right;
+  direction: rtl;
+}
+
+:root[dir="rtl"] #resume .experience li p {
+  text-align: right;
+  direction: rtl;
+}
+
+:root[dir="rtl"] #resume .experience li a {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Fix phone number display in RTL - keep numbers in LTR direction */
+:root[dir="rtl"] .section-content li span:last-child,
+:root[dir="rtl"] .contact-info li p {
+  direction: ltr;
+  text-align: right;
+  unicode-bidi: embed;
+}
+
+/* Ensure Persian dates display correctly in RTL */
+:root[dir="rtl"] .section-content li span:last-child {
+  direction: rtl;
+  text-align: right;
+  unicode-bidi: normal;
+}
