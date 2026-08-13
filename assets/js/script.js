@@ -6,7 +6,7 @@
     /* ============================================================ */
   setTimeout(function () {
     var e = !!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
-        navigator.userAgent
+        navigator.userAgent,
       ),
       s = document.getElementById("preloader");
     e
@@ -51,7 +51,7 @@
   }
   mobile_menu(
     ".menu_toggle, .close-menu ",
-    ".mobile-menu, .minfo__app, .menu-overlay"
+    ".mobile-menu, .minfo__app, .menu-overlay",
   );
   /* Mobile menu End */
 
@@ -105,6 +105,17 @@
   /* ============================================================ */
   /* Skills Slider start
     /* ============================================================ */
+  function updateSkillsCounter() {
+    var current = this.isEnd ? this.slides.length : this.realIndex + 1;
+    $(".skills-slider-navigation .counter").html(
+      '<span class="text-theme">' +
+        current +
+        "</span>" +
+        "/" +
+        this.slides.length,
+    );
+  }
+
   var skillSlider = new Swiper(".skills-slider .swiper", {
     spaceBetween: 30,
     slidesPerView: 2,
@@ -123,24 +134,8 @@
       prevEl: "#skill .button-prev",
     },
     on: {
-      init: function () {
-        $(".skills-slider-navigation .counter").html(
-          '<span class="text-theme">' +
-            (this.realIndex + 1) +
-            "</span>" +
-            "/" +
-            this.slides.length
-        );
-      },
-      slideChange: function () {
-        $(".skills-slider-navigation .counter").html(
-          '<span class="text-theme">' +
-            (this.realIndex + 1) +
-            "</span>" +
-            "/" +
-            this.slides.length
-        );
-      },
+      init: updateSkillsCounter,
+      slideChange: updateSkillsCounter,
     },
   });
   // Skills Slider End
@@ -169,7 +164,7 @@
             (this.realIndex + 1) +
             "</span>" +
             "/" +
-            this.slides.length
+            this.slides.length,
         );
       },
       slideChange: function () {
@@ -178,7 +173,7 @@
             (this.realIndex + 1) +
             "</span>" +
             "/" +
-            this.slides.length
+            this.slides.length,
         );
       },
     },
@@ -199,13 +194,13 @@
               {
                 width: $(this).attr("data-percentage"),
               },
-              2000
+              2000,
             );
         });
       },
       {
         offset: "100%",
-      }
+      },
     );
   }
   // Progressbar End
@@ -279,7 +274,7 @@
                 .parent()
                 .find(".label")
                 .html((stepValue * 100).toFixed(0) + "%");
-            }
+            },
           )
           .stop();
       }
@@ -311,7 +306,7 @@
                 .parent()
                 .find(".label")
                 .html((stepValue * 100).toFixed(0) + "%");
-            }
+            },
           )
           .stop();
       }
@@ -342,7 +337,7 @@
   /* Scroll Top
     /* ============================================================ */
   $("body").append(
-    "<a href='#top' title='Scroll Top' id='scroll-top' class='topbutton'><i class='far fa-level-up-alt'></i></a>"
+    "<a href='#top' title='Scroll Top' id='scroll-top' class='topbutton'><i class='far fa-level-up-alt'></i></a>",
   );
   var $scrolltop = $("#scroll-top");
   $(window).on("scroll", function () {
@@ -357,7 +352,7 @@
       {
         scrollTop: 0,
       },
-      1000
+      1000,
     );
     return false;
   });
