@@ -21,7 +21,7 @@
 
   <!-- Site Favicon
     ================================================== -->
-  <link rel="shortcut icon" href="assets/img/pouriya.jpg" sizes="any" />
+  <link rel="shortcut icon" href="assets/img/poriya.jpg" sizes="any" />
 
   <!-- Google Fonts
     ================================================== -->
@@ -37,6 +37,9 @@
   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/style.min.css" />
   <link rel="stylesheet" href="assets/css/rtl.css" />
+
+
+ 
 </head>
 
 <body class="relative custom_cursor">
@@ -47,6 +50,13 @@
     class="custom_cursor_two w-1 h-1 rounded-full border border-gray-400 bg-metborder-gray-400 fixed pointer-events-none left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
   </div>
   <!-- Custom Cursor End -->
+
+
+  <!-- preloader -->
+  <!-- <div id="preloader">
+    <div class="loader_line"></div> -->
+  <!-- logo or img-->
+  <!-- </div> -->
 
   <!-- App Start -->
   <div class="relative pt-10 minfo__app max-xl:pt-20">
@@ -176,13 +186,14 @@
       <!-- Sidebar Profile Start -->
       <div
         class="w-full mx-auto minfo__sidebar__wrapper xl:fixed xl:top-1/2 xl:left-4 2xl:left-14 xl:-translate-y-1/2 md:max-w-sidebar xl:max-2xl:max-w-xs z-999">
-        <div class="p-3 max-xl:mb-3 overflow-hidden minfo__sidebar bg-white dark:bg-nightBlack rounded-2xl">
+        <div
+          class="p-3 max-xl:mb-3 overflow-hidden minfo__sidebar has-cv-download bg-white dark:bg-nightBlack rounded-2xl">
           <div class="mx-4 mt-12 text-center user-info lg:mx-6">
             <a href="index.html"
               class="w-36 h-36 mb-2.5 block mx-auto border-6 border-platinum dark:border-[#2f2f2f] overflow-hidden rounded-full *:w-full *:h-full *:rounded-full">
-              <img src="assets/img/pouriya.jpg" class="hidden dark:block" alt="Brown Reddick" />
+              <img src="assets/img/poriya.jpg" class="hidden dark:block" alt="Brown Reddick" />
               <!--Image for Dark Version -->
-              <img src="assets/img/pouriya.jpg" class="dark:hidden" alt="Brown Reddick" />
+              <img src="assets/img/poriya.jpg" class="dark:hidden" alt="Brown Reddick" />
               <!--Image for Light Version -->
             </a>
             <h6 class="mb-1 text-lg font-semibold text-black dark:text-white name">
@@ -212,6 +223,62 @@
                 <span id="value-age" data-birthdate="1998-12-06">26</span>
               </li>
             </ul>
+          </div>
+
+
+          <!-- download -->
+          <div class="cv-download" id="cvDownload">
+            <button type="button" class="cv-download__button" id="cvDownloadButton" aria-haspopup="true"
+              aria-expanded="false" aria-controls="cvDownloadMenu">
+              <span class="cv-download__button-content">
+                <i class="fal fa-download" aria-hidden="true"></i>
+
+                <span data-i18n-en="Download CV" data-i18n-fa="دانلود رزومه" data-i18n-tr="CV'yi İndir">
+                  Download CV
+                </span>
+              </span>
+
+              <i class="fal fa-chevron-down cv-download__chevron" aria-hidden="true"></i>
+            </button>
+
+            <div class="cv-download__menu" id="cvDownloadMenu" role="menu" aria-hidden="true"> <a
+                href="assets/resume/Poriya-Armaghani-CV.pdf" download="Poriya-Armaghani-CV.pdf"
+                class="cv-download__option" role="menuitem">
+                <span class="cv-download__option-icon">
+                  <i class="fal fa-file-pdf" aria-hidden="true"></i>
+                </span>
+
+                <span class="cv-download__option-info">
+                  <span class="cv-download__option-title">PDF</span>
+
+                  <span class="cv-download__option-description" data-i18n-en="Best for viewing and sharing"
+                    data-i18n-fa="مناسب مشاهده و ارسال" data-i18n-tr="Görüntüleme ve paylaşım için">
+                    Best for viewing and sharing
+                  </span>
+                </span>
+
+                <span class="cv-download__badge" data-i18n-en="Recommended" data-i18n-fa="پیشنهادی"
+                  data-i18n-tr="Önerilen">
+                  Recommended
+                </span>
+              </a>
+
+              <a href="assets/resume/Poriya-Armaghani-CV.docx" download="Poriya-Armaghani-CV.docx"
+                class="cv-download__option" role="menuitem">
+                <span class="cv-download__option-icon">
+                  <i class="fal fa-file-word" aria-hidden="true"></i>
+                </span>
+
+                <span class="cv-download__option-info">
+                  <span class="cv-download__option-title">Word (.docx)</span>
+
+                  <span class="cv-download__option-description" data-i18n-en="Editable version"
+                    data-i18n-fa="نسخه قابل ویرایش" data-i18n-tr="Düzenlenebilir sürüm">
+                    Editable version
+                  </span>
+                </span>
+              </a>
+            </div>
           </div>
 
           <svg class="absolute w-0 h-0">
@@ -301,16 +368,13 @@
           <!-- Social Share Icon Start  -->
           <div
             class="absolute bottom-0 flex items-center invisible px-5 py-6 space-x-3 transition-all duration-300 -translate-y-1/2 opacity-0 social-icons top-1/2 bg-white dark:bg-nightBlack rounded-4xl right-6 group-hover:opacity-100 group-hover:visible group-hover:right-10 -z-1 *:flex *:transition *:duration-200">
-            <a href="#" class="hover:text-theme" title="Share with Facebook">
-              <i class="fab fa-facebook"></i>
+            <a href="https://t.me/poriya_armaghani" class="hover:text-theme" title="poriya telegram">
+              <i class="fab fa-telegram"></i>
             </a>
-            <a href="#" class="hover:text-theme" title="Share with Linkedin">
+            <a href="https://www.linkedin.com/in/poriya-armaghani/" class="hover:text-theme" title="poriya Linkedin">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="#" class="hover:text-theme" title="Share with X">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="hover:text-theme" title="Share with X">
+            <a href="https://www.instagram.com/poriyaarmaghani/" class="hover:text-theme" title="poriya instagram">
               <i class="fab fa-instagram"></i>
             </a>
           </div>
@@ -696,7 +760,8 @@
                   <!-- tailwind CSS -->
                   <div class="swiper-slide">
                     <div class="text-center icon">
-                      <img src="assets/img/skill/Tailwind CSS.svg" class="dark:grayscale w-13 h-13" alt="Tailwind CSS" />
+                      <img src="assets/img/skill/Tailwind CSS.svg" class="dark:grayscale w-13 h-13"
+                        alt="Tailwind CSS" />
                     </div>
                     <div class="progressCircle">
                       <div class="relative w-32 h-32 mx-auto circle md:w-40 md:h-40" data-percent="80"
@@ -1353,7 +1418,7 @@
                       <h6 class="text-lg text-black dark:text-white">
                         Phone
                       </h6>
-                      <p class="text-sm">(+98)9330771131</p>
+                      <p class="text-sm">(+98)9330477131</p>
                     </div>
                   </li>
                 </ul>
@@ -1361,8 +1426,7 @@
               <!-- Contact info end -->
 
               <div class="md:col-span-7">
-                <form id="contactForm" action="https://formspree.io/f/xvkpawar"
-                  method="POST" class="space-y-4">
+                <form id="contactForm" action="https://formspree.io/f/xvkpawar" method="POST" class="space-y-4">
                   <div class="form-group">
                     <input type="text" name="client__name" id="client__name" placeholder="Name"
                       class="w-full p-5 text-sm outline-none h-13 focus:border-theme dark:focus:border-theme dark:placeholder:text-white/40"
@@ -1485,71 +1549,9 @@
   <!-- Js Library End -->
 
   <!-- Dynamic Age + Sidebar 3-Language (EN/FA/TR) Script Start -->
-  <script>
-    (function () {
-      var STORAGE_KEY = "sidebar_lang";
-      var supportedLangs = ["en", "fa", "tr"];
+ 
 
-      function calculateAge(birthdateStr) {
-        var birth = new Date(birthdateStr);
-        var today = new Date();
-        var age = today.getFullYear() - birth.getFullYear();
-        var hasHadBirthdayThisYear =
-          today.getMonth() > birth.getMonth() ||
-          (today.getMonth() === birth.getMonth() &&
-            today.getDate() >= birth.getDate());
-        if (!hasHadBirthdayThisYear) age -= 1;
-        return age;
-      }
-
-      function applyAge() {
-        var ageEl = document.getElementById("value-age");
-        if (ageEl && ageEl.dataset.birthdate) {
-          ageEl.textContent = calculateAge(ageEl.dataset.birthdate);
-        }
-      }
-
-      function applyLang(lang) {
-        if (supportedLangs.indexOf(lang) === -1) lang = "en";
-        document.querySelectorAll("[data-i18n-" + lang + "]").forEach(function (el) {
-          el.textContent = el.getAttribute("data-i18n-" + lang);
-        });
-
-        [["lang_en", "en"], ["lang_fa", "fa"], ["lang_tr", "tr"]].forEach(
-          function (pair) {
-            var btn = document.getElementById(pair[0]);
-            if (!btn) return;
-            btn.classList.toggle("!bg-theme", pair[1] === lang);
-            btn.classList.toggle("!text-white", pair[1] === lang);
-          }
-        );
-
-        try {
-          localStorage.setItem(STORAGE_KEY, lang);
-        } catch (e) { }
-      }
-
-      function initLang() {
-        var saved = "en";
-        try {
-          saved = localStorage.getItem(STORAGE_KEY) || "en";
-        } catch (e) { }
-        applyLang(saved);
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        applyAge();
-        initLang();
-
-        var en = document.getElementById("lang_en");
-        var fa = document.getElementById("lang_fa");
-        var tr = document.getElementById("lang_tr");
-        if (en) en.addEventListener("click", function () {applyLang("en");});
-        if (fa) fa.addEventListener("click", function () {applyLang("fa");});
-        if (tr) tr.addEventListener("click", function () {applyLang("tr");});
-      });
-    })();
-  </script>
+ 
   <!-- Dynamic Age + Sidebar 3-Language (EN/FA/TR) Script End -->
 </body>
 
