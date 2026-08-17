@@ -4,20 +4,15 @@
   /* ============================================================ */
   /* PRELOADER START
     /* ============================================================ */
-  setTimeout(function () {
-    var e = !!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
-        navigator.userAgent,
-      ),
-      s = document.getElementById("preloader");
-    e
-      ? s && s.parentNode && s.parentNode.removeChild(s)
-      : (setTimeout(function () {
-          s.classList.add("preloaded");
-        }, 1000),
-        setTimeout(function () {
-          s && s.parentNode && s.parentNode.removeChild(s);
-        }, 2000));
-  }, 1000);
+  // setTimeout(function () {
+  //   var e = !!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent),s = document.getElementById("preloader");
+  //   e ? s && s.parentNode && s.parentNode.removeChild(s) : (setTimeout(function () {
+  //         s.classList.add("preloaded");
+  //       }, 1000),
+  //       setTimeout(function () {
+  //         s && s.parentNode && s.parentNode.removeChild(s);
+  //       }, 1000));
+  // }, 1000);
   /* Preloader End */
 
   /* ============================================================ */
@@ -358,3 +353,112 @@
   });
 })(jQuery);
 // jQuery Ended
+
+
+    (function () {
+      var STORAGE_KEY = "sidebar_lang";
+      var supportedLangs = ["en", "fa", "tr"];
+
+      function calculateAge(birthdateStr) {
+        var birth = new Date(birthdateStr);
+        var today = new Date();
+        var age = today.getFullYear() - birth.getFullYear();
+        var hasHadBirthdayThisYear =
+          today.getMonth() > birth.getMonth() ||
+          (today.getMonth() === birth.getMonth() &&
+            today.getDate() >= birth.getDate());
+        if (!hasHadBirthdayThisYear) age -= 1;
+        return age;
+      }
+
+      function applyAge() {
+        var ageEl = document.getElementById("value-age");
+        if (ageEl && ageEl.dataset.birthdate) {
+          ageEl.textContent = calculateAge(ageEl.dataset.birthdate);
+        }
+      }
+
+      function applyLang(lang) {
+        if (supportedLangs.indexOf(lang) === -1) lang = "en";
+        document.querySelectorAll("[data-i18n-" + lang + "]").forEach(function (el) {
+          el.textContent = el.getAttribute("data-i18n-" + lang);
+        });
+
+        [["lang_en", "en"], ["lang_fa", "fa"], ["lang_tr", "tr"]].forEach(
+          function (pair) {
+            var btn = document.getElementById(pair[0]);
+            if (!btn) return;
+            btn.classList.toggle("!bg-theme", pair[1] === lang);
+            btn.classList.toggle("!text-white", pair[1] === lang);
+          }
+        );
+
+        try {
+          localStorage.setItem(STORAGE_KEY, lang);
+        } catch (e) { }
+      }
+
+      function initLang() {
+        var saved = "en";
+        try {
+          saved = localStorage.getItem(STORAGE_KEY) || "en";
+        } catch (e) { }
+        applyLang(saved);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        applyAge();
+        initLang();
+
+        var en = document.getElementById("lang_en");
+        var fa = document.getElementById("lang_fa");
+        var tr = document.getElementById("lang_tr");
+        if (en) en.addEventListener("click", function () {applyLang("en");});
+        if (fa) fa.addEventListener("click", function () {applyLang("fa");});
+        if (tr) tr.addEventListener("click", function () {applyLang("tr");});
+      });
+    })();
+
+
+document.addEventListener("DOMContentLoaded", function () {
+      const downloadBox = document.getElementById("cvDownload");
+      const downloadButton = document.getElementById("cvDownloadButton");
+      const downloadMenu = document.getElementById("cvDownloadMenu");
+
+      if (!downloadBox || !downloadButton || !downloadMenu) {
+        return;
+      }
+
+      function setDownloadMenu(open) {
+        downloadButton.setAttribute("aria-expanded", String(open));
+        downloadMenu.setAttribute("aria-hidden", String(!open));
+        downloadBox.classList.toggle("is-open", open);
+      }
+
+      downloadButton.addEventListener("click", function () {
+        const isOpen =
+          downloadButton.getAttribute("aria-expanded") === "true";
+
+        setDownloadMenu(!isOpen);
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!downloadBox.contains(event.target)) {
+          setDownloadMenu(false);
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          setDownloadMenu(false);
+          downloadButton.focus();
+        }
+      });
+
+      downloadMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          setDownloadMenu(false);
+        });
+      });
+    });
+
